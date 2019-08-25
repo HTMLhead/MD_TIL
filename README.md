@@ -1,3 +1,3 @@
-# MD_TIL
-Straighten out What I learned today
+# Study_etc
 
+공부한 내용들을 복습하기 쉽게 요약정리해놓은 리파지토리입니다.
