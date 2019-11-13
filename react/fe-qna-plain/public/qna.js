@@ -59,7 +59,14 @@ function QNA() {
   debugger;
   const [qnaList, setQnAList] = Plain.useState([]);
   //login 과정도 useState로 구현할 수 있음
-  //const [loginId, setLoginId] = Plain.useState(null);
+  const [loginId, setLoginId] = Plain.useState(null);
+
+  (function login() {
+    $(".login-btn").addEventListener("click", e => {
+      const fetched = postData(URL.LOGIN, { id: "head", password: "1234" });
+      setLoginId(fetched);
+    });
+  })();
 
   function renderQnA(data) {
     const target = $(".qna-wrap");
