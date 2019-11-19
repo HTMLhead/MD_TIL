@@ -1,4 +1,4 @@
-import MainService from "./mainService.js/index.js";
+import MainService from "./mainService.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   const targetEl = document.querySelector("#log");
