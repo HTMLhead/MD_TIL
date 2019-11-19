@@ -1,4 +1,6 @@
 const path = require("path");
+// 모듈 추가
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -15,5 +17,10 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/app.html"
+    })
+  ]
 };
