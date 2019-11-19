@@ -10,15 +10,11 @@ module.exports = function(api) {
         corejs: "3",
         modules: false
       }
-    ]
-  ];
-
-  const plugins = [
-    ["@babel/plugin-proposal-class-properties", { loose: true }]
+    ],
+    ["@babel/preset-react"]
   ];
 
   return {
-    presets,
-    plugins
+    presets
   };
 };
