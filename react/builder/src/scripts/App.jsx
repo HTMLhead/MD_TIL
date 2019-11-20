@@ -1,12 +1,12 @@
 import React from "react";
-import ContextProvider from "./ContextProvider/index.jsx";
+import GlobalStateProvider from "./GlobalStateProvider/index.jsx";
 import NewsTask from "./NewsTask/index.jsx";
 
 const App = () => {
   return (
-    <ContextProvider>
+    <GlobalStateProvider>
       <NewsTask />
-    </ContextProvider>
+    </GlobalStateProvider>
   );
 };
 
