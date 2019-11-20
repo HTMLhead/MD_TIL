@@ -1,6 +1,6 @@
 import React from "react";
 
-const useFetch = (opt, url) => {
+const useFetch = (url, opt) => {
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
   const [data, setData] = React.useState(null);
