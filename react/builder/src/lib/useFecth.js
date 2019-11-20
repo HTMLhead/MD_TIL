@@ -18,7 +18,8 @@ const useFetch = (url, opt) => {
       }
     };
     fetchData();
-  }, []);
+    () => {};
+  }, [url]);
 
   return { data, loading, error };
 };
