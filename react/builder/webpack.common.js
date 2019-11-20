@@ -14,22 +14,8 @@ module.exports = {
         test: /\.(js|jsx)$/,
         use: "babel-loader",
         exclude: /node_modules/
-      },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/,
-        loader: "url-loader",
-        options: {
-          limit: 8192
-        }
       }
     ]
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: "publicFolder/index.html" })
-  ]
+  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })]
 };
