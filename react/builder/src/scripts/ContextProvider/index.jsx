@@ -6,16 +6,16 @@ const news = {
   id: "",
   logoImgUrl: "",
   newslist: [],
-  thumbnews: {}
+  thumbnews: []
 };
 
 const ContextProvider = ({ children }) => {
-  const Context = React.createContext(news);
+  const GlobalContext = React.createContext(news);
 
   return (
-    <Context.Provider value={useReducer(stateReducer, GlobalState)}>
+    <GlobalContext.Provider value={React.useReducer(stateReducer, news)}>
       {children}
-    </Context.Provider>
+    </GlobalContext.Provider>
   );
 };
 
