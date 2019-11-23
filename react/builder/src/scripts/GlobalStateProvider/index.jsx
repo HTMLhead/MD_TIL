@@ -4,7 +4,9 @@ import stateReducer from "./stateReducer.js";
 const GlobalContext = React.createContext();
 
 const initalData = {
-  news: []
+  index: 0,
+  currentNews: "SBS",
+  contentViewStatus: "List"
 };
 
 const GlobalStateProvider = ({ children }) => {
