@@ -1,6 +1,7 @@
 import React from "react";
 import { useStateValue } from "../GlobalStateProvider/index.jsx";
 import useFetch from "../../lib/useFecth.js";
+import Navigator from "./Navigator/index.jsx";
 
 const fetchOption = { method: "GET", mode: "cors" };
 const dataUrl =
@@ -17,7 +18,13 @@ const NewsTask = () => {
 
   if (loading) return <div>loading</div>;
   if (error) return <div>error{error}</div>;
-  return <div>hi</div>;
+
+  return (
+    <>
+      <Navigator />
+      {/* <Content /> */}
+    </>
+  );
 };
 
 export default NewsTask;
