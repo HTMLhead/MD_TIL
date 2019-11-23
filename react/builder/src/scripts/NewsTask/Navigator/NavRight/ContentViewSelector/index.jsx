@@ -18,10 +18,10 @@ const ContentViewSelector = () => {
   return (
     <ViewSelectorWrapper>
       <IconWrapper>
-        <List />
+        <GridAlt />
       </IconWrapper>
       <IconWrapper>
-        <GridAlt />
+        <List />
       </IconWrapper>
     </ViewSelectorWrapper>
   );
