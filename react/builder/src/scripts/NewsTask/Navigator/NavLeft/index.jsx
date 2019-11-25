@@ -5,23 +5,22 @@ import { Arrow } from "../../../../lib/icons.js";
 
 const NavLeftWrapper = styled.div`
   width: 20rem;
-  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.4rem;
 `;
 const NewsStand = styled.div`
-  padding: 0 2px;
+  padding: 0 1rem;
   font-weight: bold;
 `;
 const WholePress = styled.div`
-  padding: 0 15px;
+  padding: 0 1.5rem;
   color: #666;
 `;
 const Divider = styled.div`
   border-right: 1px solid #666;
-  height: 15px;
+  height: 1.5rem;
 `;
 
 const NewsTask = () => {
