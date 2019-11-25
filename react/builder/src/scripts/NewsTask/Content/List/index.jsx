@@ -4,16 +4,18 @@ import { useCurrentState } from "../../../CurrentStateProvider/index.jsx";
 
 const ListWrapper = styled.ul`
   border-right: 1px solid #ccc;
-  width: 150px;
-  height: 230px;
+  width: 18rem;
+  height: 23rem;
   color: #000;
   overflow: scroll;
+  padding: 1rem;
 `;
 
 const ListItem = styled.li`
-  width: 150px;
-  height: 20px;
-  color: ${props => (props.selected ? "red" : "#000")};
+  width: 15rem;
+  height: 1.4rem;
+  padding: 0.2rem;
+  color: ${props => (props.selected ? "#139ffb" : "#666")};
   :hover {
     cursor: pointer;
   }
