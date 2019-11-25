@@ -5,7 +5,7 @@ import { useCurrentState } from "../../../CurrentStateProvider/index.jsx";
 const ListWrapper = styled.ul`
   border-right: 1px solid #ccc;
   width: 18rem;
-  height: 23rem;
+  height: 15rem;
   color: #000;
   overflow: scroll;
   padding: 1rem;
