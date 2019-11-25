@@ -8,10 +8,11 @@ const NavLeftWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 380px;
+  width: 45rem;
 `;
 const MyNews = styled.div`
   padding: 0 15px;
+  font-size: 1.4rem;
   font-weight: bold;
 `;
 
