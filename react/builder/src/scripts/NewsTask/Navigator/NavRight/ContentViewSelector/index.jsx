@@ -6,22 +6,26 @@ import { GridAlt } from "styled-icons/boxicons-regular";
 const ViewSelectorWrapper = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
+  left: 6rem;
 `;
 
 const IconWrapper = styled.div`
-  width: 20px;
-  height: 20px;
-  padding: 0 5px;
+  padding: 1rem;
+  color: #666;
+  &:hover {
+    color: #139ffb;
+  }
 `;
 
 const ContentViewSelector = () => {
   return (
     <ViewSelectorWrapper>
       <IconWrapper>
-        <GridAlt />
+        <GridAlt style={{ width: "2rem" }} />
       </IconWrapper>
       <IconWrapper>
-        <List />
+        <List style={{ width: "2rem" }} />
       </IconWrapper>
     </ViewSelectorWrapper>
   );
