@@ -1,11 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import useFetch from "../../../../lib/useFecth";
-import { useStateValue } from "../../../GlobalStateProvider/index.jsx";
-
-const fetchOption = { method: "GET", mode: "cors" };
-const dataUrl =
-  "https://gist.githubusercontent.com/crongro/6928f4707c55da24a27e366579c2288e/raw/c288f6ba05b883862c186afcb295bbdde20077ff/newsstand-news-json.js";
+import { useCurrentState } from "../../../CurrentStateProvider/index.jsx";
 
 const ListWrapper = styled.ul`
   border-right: 1px solid #ccc;
@@ -25,25 +20,26 @@ const ListItem = styled.li`
 `;
 
 const List = () => {
-  const { data, loading, error } = useFetch(dataUrl, fetchOption);
-  const [companyList, setCompanyList] = React.useState([]);
-  const [{ currentNews }, dispatch] = useStateValue();
-
-  React.useEffect(() => {
-    if (loading) return;
-    const companies = data.map(newsData => {
-      return newsData.company;
-    });
-    setCompanyList(companies);
-  }, [data]);
+  const [data, dispatch] = useCurrentState();
 
   const handleClick = ({ target }) => {
-    dispatch({ type: "CHANGE_NEWS", args: target.innerText });
+    dispatch({ type: "CURRENT_NEWS", args: target.innerText });
   };
+
+  const companies = React.useMemo(() => {
+    return data.ALL_DATA.map(newsData => {
+      return newsData.company;
+    });
+  }, [data.ALL_DATA]);
+
   return (
     <ListWrapper>
-      {companyList.map(company => (
-        <ListItem selected={company === currentNews} onClick={handleClick}>
+      {companies.map(company => (
+        <ListItem
+          key={company}
+          selected={company === data.company}
+          onClick={handleClick}
+        >
           {company}
         </ListItem>
       ))}
