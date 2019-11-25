@@ -12,6 +12,7 @@ const LogoImg = styled.img`
   width: 3rem;
   height: 1.5rem;
   display: block;
+  margin-bottom: 1rem;
 `;
 
 const NewsContentWrapper = styled.div`
@@ -21,17 +22,23 @@ const NewsContentWrapper = styled.div`
 
 const ThumbnailNewsWrapper = styled.div`
   position: relative;
-  width: 12rem;
-  height: 9rem;
+  width: 18rem;
+  height: 12rem;
+  background-image: url(${props => props.src});
+  background-position: center;
+  background-size: cover;
+  transition: background-size 0.1s linear;
+  &:hover {
+    background-size: 110%;
+    cursor: pointer;
+    text-decoration: underline;
+  }
 `;
 
-const ThumbnailNewsImg = styled.img`
-  width: 12rem;
-  height: 9rem;
-`;
 const ThumbnailNewsText = styled.div`
   position: absolute;
-  width: 11rem;
+  line-height: 1.4rem;
+  width: 17rem;
   height: 3rem;
   color: #fff;
   bottom: 0;
@@ -40,7 +47,7 @@ const ThumbnailNewsText = styled.div`
 `;
 const ThumbnailNewsTextWrapper = styled.div`
   position: absolute;
-  width: 12rem;
+  width: 18rem;
   height: 4rem;
   background-color: #000;
   opacity: 0.3;
@@ -50,11 +57,19 @@ const ThumbnailNewsTextWrapper = styled.div`
 const NewsListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0 1rem;
 `;
 
 const NewsList = styled.div`
-  padding: 0.1rem 0;
+  padding: 0.5rem 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 23.8rem;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 
 const NewsContent = () => {
@@ -65,8 +80,7 @@ const NewsContent = () => {
     <ContentWrapper>
       <LogoImg src={data.logoImgUrl} />
       <NewsContentWrapper>
-        <ThumbnailNewsWrapper>
-          <ThumbnailNewsImg src={data.thumbnews.imageUrl} />
+        <ThumbnailNewsWrapper src={data.thumbnews.imageUrl}>
           <ThumbnailNewsTextWrapper />
           <ThumbnailNewsText>{data.thumbnews.text}</ThumbnailNewsText>
         </ThumbnailNewsWrapper>
