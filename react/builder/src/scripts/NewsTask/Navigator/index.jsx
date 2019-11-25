@@ -6,7 +6,9 @@ import NavLeft from "./NavLeft/index.jsx";
 
 const NavWrapper = styled.div`
   display: flex;
-  height: 30px;
+  height: 4rem;
+  width: 65rem;
+  border: 1px solid #666;
 `;
 
 const NewsTask = () => {
