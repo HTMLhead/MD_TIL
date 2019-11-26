@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { LeftArrow, RightArrow } from "styled-icons/boxicons-regular";
+import { useCurrentState } from "../../../../CurrentStateProvider/index.jsx";
 
 const BtnWrapper = styled.div`
   display: flex;
@@ -14,16 +15,35 @@ const EachBtnWrapper = styled.div`
   color: #666;
   &:hover {
     color: #139ffb;
+    cursor: pointer;
   }
 `;
 
 const ConetnePageMover = () => {
+  const [data, dispatch] = useCurrentState();
+
+  const changeNewsHandler = btnCase => {
+    let isNext;
+    if (btnCase === "next") isNext = 1;
+    if (btnCase === "prev") isNext = -1;
+    data.ALL_DATA.find((newsList, i) => {
+      if (newsList.id === data.id) {
+        let resultIndex = i + isNext;
+        if (resultIndex > data.ALL_DATA.length - 1) resultIndex = 0;
+        if (resultIndex < 0) resultIndex = data.ALL_DATA.length - 1;
+        dispatch({
+          type: "CURRENT_NEWS",
+          args: data.ALL_DATA[resultIndex].company
+        });
+      }
+    });
+  };
   return (
     <BtnWrapper>
-      <EachBtnWrapper>
+      <EachBtnWrapper onClick={() => changeNewsHandler("prev")}>
         <LeftArrow style={{ width: "2rem" }} />
       </EachBtnWrapper>
-      <EachBtnWrapper>
+      <EachBtnWrapper onClick={() => changeNewsHandler("next")}>
         <RightArrow style={{ width: "2rem" }} />
       </EachBtnWrapper>
     </BtnWrapper>
