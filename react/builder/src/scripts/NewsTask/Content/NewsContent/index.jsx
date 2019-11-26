@@ -75,7 +75,6 @@ const NewsList = styled.div`
 const NewsContent = () => {
   const [data, dispatch] = useCurrentState();
 
-  console.log(data);
   return (
     <ContentWrapper>
       <LogoImg src={data.logoImgUrl} />
